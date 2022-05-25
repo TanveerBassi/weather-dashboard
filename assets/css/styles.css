@@ -2,3 +2,7 @@ body {
   font-family: "Righteous", cursive;
   font-family: "Roboto", sans-serif;
 }
+
+.current-weather-card {
+  background-color: aqua;
+}
