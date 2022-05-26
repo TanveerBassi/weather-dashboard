@@ -1,8 +1,38 @@
-body {
-  font-family: "Righteous", cursive;
-  font-family: "Roboto", sans-serif;
+:root {
+  --charcoal: #264653ff;
+  --persian-green: #2a9d8fff;
+  --maize-crayola: #e9c46aff;
+  --sandy-brown: #f4a261ff;
+  --burnt-sienna: #e76f51ff;
 }
 
-.current-weather-card {
-  background-color: aqua;
+body {
+  font-family: "Dancing Script", cursive;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Smokum", cursive;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.jumbotron {
+  padding: 2rem 1rem;
+  background-color: #e9ecef;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.forecast-card {
+  width: 16rem;
+}
+
+@media screen and (max-width: 576px) {
+  .forecast-card {
+    width: 100%;
+  }
 }
