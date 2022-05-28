@@ -12,7 +12,7 @@ const readFromLocalStorage = (key, defaultValue) => {
   }
 };
 
-const onReady = () => {
+const renderRecentSearches = () => {
   const recentSearchesContainer = $("recent-searches-container");
 
   //get recent searches from LS
@@ -22,11 +22,15 @@ const onReady = () => {
   if (recentSearches.length) {
   } else {
     const alert = `<div class="alert alert-warning" role="alert">
-        A simple warning alert—check it out!
-        </div>`;
+          A simple warning alert—check it out!
+          </div>`;
 
     recentSearchesContainer.append(alert);
   }
+};
+
+const onReady = () => {
+  renderRecentSearches();
 };
 
 $(document).ready(onReady);
