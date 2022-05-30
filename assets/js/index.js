@@ -1,3 +1,5 @@
+const recentSearchesContainer = $("recent-searches-container");
+
 const readFromLocalStorage = (key, defaultValue) => {
   // get from LS using key name
   const dataFromLS = localStorage.getItem(key);
@@ -13,8 +15,6 @@ const readFromLocalStorage = (key, defaultValue) => {
 };
 
 const renderRecentSearches = () => {
-  const recentSearchesContainer = $("recent-searches-container");
-
   //get recent searches from LS
   const recentSearches = readFromLocalStorage("recentSearches", []);
 
@@ -29,8 +29,21 @@ const renderRecentSearches = () => {
   }
 };
 
+const handleRecentSearchClick = async (event) => {
+  const target = $(event.target);
+
+  // restrict clicks only from li
+  if (target.is("li")) {
+    // get data city attribute
+    const cityName = target.attr("data-city");
+
+    await renderWeatherInfo(cityName);
+  }
+};
+
 const onReady = () => {
   renderRecentSearches();
 };
 
+recentSearchesContainer.click(handleRecentSearchClick);
 $(document).ready(onReady);
